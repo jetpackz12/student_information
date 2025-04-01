@@ -3,15 +3,18 @@
 use App\Http\Controllers\ClassScheduleController;
 use App\Http\Controllers\CourseAssigneeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\YearlevelController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [StudentController::class, 'index'])->name('student');
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('loginlogin');
 
 Route::prefix('student')->group(function () {
+    Route::get('/', [StudentController::class, 'index'])->name('student');
     Route::post('/store', [StudentController::class, 'store'])->name('studentstore');
     Route::get('/show', [StudentController::class, 'show'])->name('studentshow');
     Route::get('/edit', [StudentController::class, 'edit'])->name('studentedit');
