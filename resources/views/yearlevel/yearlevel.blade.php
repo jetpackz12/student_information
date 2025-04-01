@@ -9,9 +9,10 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('student') }}" class="text-secondary">Student</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('course') }}" class="text-secondary">Course</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('yearlevel') }}">YearLevel</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('course') }}" class="text-secondary">Course</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('subject') }}" class="text-secondary">Subject</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('class_schedule') }}" class="text-secondary">Class Schedule</a></li>
                         </ol>
                     </div>
                 </div>
@@ -184,6 +185,8 @@
 
     <script>
         $("#yearlevel_link").addClass("active");
+        $("#course_class_management").addClass("menu-open");
+        $("#course_class_management_link").addClass("active");
 
         $('.edit').on('click', function(e) {
             const id = $(this).attr('data-id');

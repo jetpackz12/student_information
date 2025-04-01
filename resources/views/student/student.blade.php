@@ -7,15 +7,6 @@
                     <div class="col-sm-6">
                         <h1>Student</h1>
                     </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('student') }}">Student</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('course') }}" class="text-secondary">Course</a>
-                            </li>
-                            <li class="breadcrumb-item"><a href="{{ route('yearlevel') }}"
-                                    class="text-secondary">YearLevel</a></li>
-                        </ol>
-                    </div>
                 </div>
                 <form action="{{ route('studentshow') }}" method="GET">
                     @csrf
@@ -353,7 +344,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title"><i class="fa fa-edit"></i> Edit Status</h4>
+                    <h4 class="modal-title"><i class="fa fa-edit"></i> Delete Student</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -379,6 +370,8 @@
 
     <script>
         $("#student_link").addClass("active");
+        $("#student_management").addClass("menu-open");
+        $("#student_management_link").addClass("active");
 
         $('.edit').on('click', function(e) {
             const id = $(this).attr('data-id');

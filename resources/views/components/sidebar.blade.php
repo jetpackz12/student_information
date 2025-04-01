@@ -12,7 +12,7 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                <img src="{{ asset('dist/img/avatar5.png') }}" class="img-circle elevation-2"
                     alt="User Image">
             </div>
             <div class="info">
@@ -26,8 +26,8 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
        with font-awesome or any other icon font library -->
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                <li class="nav-item" id="student_management">
+                    <a href="#" class="nav-link" id="student_management_link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Student Management
@@ -38,7 +38,24 @@
                         <li class="nav-item">
                             <a href="{{ route('student') }}" class="nav-link" id="student_link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Student</p>
+                                <p>Student Profiles</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" id="course_class_management">
+                    <a href="#" class="nav-link" id="course_class_management_link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Course & Class Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('yearlevel') }}" class="nav-link" id="yearlevel_link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>YearLevel</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -48,9 +65,38 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('yearlevel') }}" class="nav-link" id="yearlevel_link">
+                            <a href="{{ route('subject') }}" class="nav-link" id="subject_link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>YearLevel</p>
+                                <p>Subject</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('class_schedule') }}" class="nav-link" id="class_schedule_link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Class Schedule</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" id="teacher_management">
+                    <a href="#" class="nav-link" id="teacher_management_link">
+                        <i class="nav-icon fas fa-user-tie"></i>
+                        <p>
+                            Teacher Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('teacher') }}" class="nav-link" id="teacher_link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Teacher Profile</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('course_assignee') }}" class="nav-link" id="course_assignee_link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Course Assignee</p>
                             </a>
                         </li>
                     </ul>
