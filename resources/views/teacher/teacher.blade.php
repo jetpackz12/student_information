@@ -39,8 +39,8 @@
                                             <th>No.</th>
                                             <th>Teacher Name</th>
                                             <th>Gender</th>
-                                            <th>Age</th>
                                             <th>Address</th>
+                                            <th>Age</th>
                                             <th>Phone#</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -51,8 +51,8 @@
                                             <td>1</td>
                                             <td>Joseph Jett T. Abela</td>
                                             <td>Male</td>
-                                            <td>BSIS</td>
                                             <td>Talibon Bohol</td>
+                                            <td>26</td>
                                             <td>09123456789</td>
                                             <td>Active</td>
                                             <td class="py-0 align-middle">
@@ -80,8 +80,8 @@
                                             <td>2</td>
                                             <td>Aljoe Anthony Berden</td>
                                             <td>Male</td>
-                                            <td>BSIS</td>
                                             <td>Talibon Bohol</td>
+                                            <td>26</td>
                                             <td>09123456789</td>
                                             <td>Inactive</td>
                                             <td class="py-0 align-middle">
@@ -134,28 +134,42 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Teacher</label>
-                            <select class="form-control" id="teacher" name="teacher" required>
-                                <option value="" selected disabled>Select Teacher</option>
-                                <option value="">Joseph Jett T. Abela</option>
+                            <label for="first_name">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name"
+                                placeholder="Enter First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="middle_name">Middle Name</label>
+                            <input type="text" class="form-control" id="middle_name" name="middle_name"
+                                placeholder="Enter Middle Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name"
+                                placeholder="Enter Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="form-control" id="gender" name="gender" required>
+                                <option value="" selected disabled>Select Gender</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Subject</label>
-                            <select class="form-control" id="subject" name="subject" required>
-                                <option value="" selected disabled>Select Subject</option>
-                                <option value="">Software Engineering ( Course - BSIS )</option>
-                            </select>
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="address"
+                                placeholder="Enter Address" required>
                         </div>
                         <div class="form-group">
-                            <label for="time_start">Time Start: </label>
-                            <input type="time" class="form-control" id="time_start" name="time_start"
-                                placeholder="Enter Time Start" required>
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control" id="age" name="age"
+                                placeholder="Enter Age" required>
                         </div>
                         <div class="form-group">
-                            <label for="time_end">Time End: </label>
-                            <input type="time" class="form-control" id="time_end" name="time_end"
-                                placeholder="Enter Time End" required>
+                            <label for="phone_number">Phone Number</label>
+                            <input type="number" class="form-control" id="phone_number" name="phone_number"
+                                placeholder="Enter Phone Number" required>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -184,28 +198,42 @@
                     <div class="modal-body">
                         <input class="form-control e_id" type="text" name="id" hidden readonly>
                         <div class="form-group">
-                            <label>Teacher</label>
-                            <select class="form-control" id="teacher" name="teacher" required>
-                                <option value="" selected disabled>Select Teacher</option>
-                                <option value="">Joseph Jett T. Abela</option>
+                            <label for="first_name">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name"
+                                placeholder="Enter First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="middle_name">Middle Name</label>
+                            <input type="text" class="form-control" id="middle_name" name="middle_name"
+                                placeholder="Enter Middle Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name"
+                                placeholder="Enter Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="form-control" id="gender" name="gender" required>
+                                <option value="" selected disabled>Select Gender</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Subject</label>
-                            <select class="form-control" id="subject" name="subject" required>
-                                <option value="" selected disabled>Select Subject</option>
-                                <option value="">Software Engineering ( Course - BSIS )</option>
-                            </select>
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="address"
+                                placeholder="Enter Address" required>
                         </div>
                         <div class="form-group">
-                            <label for="time_start">Time Start: </label>
-                            <input type="time" class="form-control" id="time_start" name="time_start"
-                                placeholder="Enter Time Start" required>
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control" id="age" name="age"
+                                placeholder="Enter Age" required>
                         </div>
                         <div class="form-group">
-                            <label for="time_end">Time End: </label>
-                            <input type="time" class="form-control" id="time_end" name="time_end"
-                                placeholder="Enter Time End" required>
+                            <label for="phone_number">Phone Number</label>
+                            <input type="number" class="form-control" id="phone_number" name="phone_number"
+                                placeholder="Enter Phone Number" required>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
