@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClassScheduleController;
 use App\Http\Controllers\CourseAssigneeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
@@ -14,6 +15,15 @@ Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('loginlogin');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/registration', [LoginController::class, 'registration'])->name('registration');
+
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/store', [DashboardController::class, 'store'])->name('dashboardstore');
+    Route::get('/show', [DashboardController::class, 'show'])->name('dashboardshow');
+    Route::get('/edit', [DashboardController::class, 'edit'])->name('dashboardedit');
+    Route::post('/update', [DashboardController::class, 'update'])->name('dashboardupdate');
+    Route::post('/destroy', [DashboardController::class, 'destroy'])->name('dashboarddestroy');
+});
 
 Route::prefix('student')->group(function () {
     Route::get('/', [StudentController::class, 'index'])->name('student');

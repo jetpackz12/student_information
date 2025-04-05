@@ -26,6 +26,12 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
        with font-awesome or any other icon font library -->
+                <li class="nav-item" id="dashboard">
+                    <a href="{{ route('dashboard') }}" class="nav-link" id="dashboard_link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
                 <li class="nav-item" id="student_management">
                     <a href="#" class="nav-link" id="student_management_link">
                         <i class="nav-icon fas fa-users"></i>

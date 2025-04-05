@@ -52,7 +52,7 @@ class StudentController extends Controller
         $renderMessage = [
             'response' => 1,
             'message' => 'Adding student success',
-            'path' => '/'
+            'path' => '/student'
         ];
 
         return response()->json($renderMessage);
@@ -120,7 +120,7 @@ class StudentController extends Controller
         $renderMessage = [
             'response' => 1,
             'message' => 'Updating student success',
-            'path' => '/'
+            'path' => '/student'
         ];
 
         return response()->json($renderMessage);
@@ -137,7 +137,7 @@ class StudentController extends Controller
         $renderMessage = [
             'response' => 1,
             'message' => 'Deleting student success',
-            'path' => '/'
+            'path' => '/student'
         ];
 
         return response()->json($renderMessage);
