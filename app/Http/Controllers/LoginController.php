@@ -25,7 +25,7 @@ class LoginController extends Controller
             if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
                 $request->session()->regenerate();
                 Session::put(['name' => $user->name]);
-                return redirect('/student');
+                return redirect('/dashboard');
             } else {
                 return redirect('/')->with('error', 'Failed to authenticate!');
             }
