@@ -8,11 +8,11 @@
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('login') }}">
-            LOGOUT <b><i class="fas fa-arrow-right"></i></b>
-          </a>
-        </li>
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button class="btn btn-light btn_out" type="submit" href="#"><i
+                    class="fas fa-sign-out-alt"></i> Logout</button>
+        </form>
       </ul>
 </nav>
 <!-- /.navbar -->

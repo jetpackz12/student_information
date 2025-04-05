@@ -15,10 +15,6 @@
         <script>
             alert("{{ session('error') }}");
         </script>
-    @elseif (session('success'))
-        <script>
-            alert("{{ session('success') }}");
-        </script>
     @endif
 </head>
 <body class="hold-transition login-page">
@@ -29,10 +25,18 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Registration</p>
 
-      <form action="{{ route('loginlogin') }}" method="post">
+      <form action="" method="post">
         @csrf
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Name" name="name" required>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user-tag"></span>
+            </div>
+          </div>
+        </div>
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email" required>
           <div class="input-group-append">
@@ -52,8 +56,11 @@
         <div class="row">
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-            <a type="button" href="{{ route('registration') }}" class="btn btn-primary btn-block">Registration</a>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            <a type="button" href="{{ route('login') }}" class="btn btn-outline-primary btn-block">
+                <i class="fa fa-arrow-circle-left"></i>
+                Back
+            </a>
           </div>
           <!-- /.col -->
         </div>

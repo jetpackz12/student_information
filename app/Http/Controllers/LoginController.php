@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -21,11 +22,33 @@ class LoginController extends Controller
         $user = User::where('email', '=', $request->email)->first();
 
         if ($user && Hash::check($request->password, $user->password)) {
-            return redirect('/student');
+            if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
+                $request->session()->regenerate();
+                Session::put(['name' => $user->name]);
+                return redirect('/student');
+            } else {
+                return redirect('/')->with('error', 'Failed to authenticate!');
+            }
+
         } else {
             return redirect('/')->with('error', 'Invalid user credentials');
         }
         
+    }
+
+    public function logout(Request $request) 
+    {
+        
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('success', 'Log out success!');
+    }
+
+    public function registration()
+    {
+        return view('registration.registration');
     }
 
     /**
